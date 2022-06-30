@@ -24,6 +24,7 @@ def clean_cycle_data(cell_data, cycle_number, columns=['voltage', 'current', 'cy
                                               & (selected_cell_data['discharge_capacity']!=0)]
     return clean_cell_data_cycle_number[columns]
 
+
 def prep_features_per_cell(cell, n_points=100, columns=['voltage', 'current', 'cycle_index'], interpol_kind='linear'):
     max_cycle_idx = max(cell.structured_data['cycle_index'])
     interp_clean_cell = []
@@ -37,3 +38,53 @@ def prep_features_per_cell(cell, n_points=100, columns=['voltage', 'current', 'c
             empty_cycles.append(i)
     interp_clean_cell = np.array(interp_clean_cell)
     return interp_clean_cell
+
+
+def find_slope(cycle_window_label):
+    mid_window_index = len(cycle_window_label)//2
+    low = np.array(cycle_window_label)[0]
+    mid = np.array(cycle_window_label)[mid_window_index]
+    high = np.array(cycle_window_label)[-1]
+    slope_1 = (mid[1] - low[1]) / (mid[0] - low[0]) 
+    slope_2 = (high[1] - mid[1]) / (high[0] - mid[0]) 
+    return slope_1, slope_2
+
+
+def find_renumbedred_index(cell):
+    '''This function finds the renumbered index for the cycles that are followed by a diagnostic cycle'''
+    renumbered_index_for_cycle_following_a_diagnostic_cycle = []
+    i = 0
+    for k,cycle in enumerate(cell):
+        actual_cycle_index = np.unique(cycle['cycle_index'])[0]
+#         print(i, actual_cycle_index)
+        if actual_cycle_index != i:
+            renumbered_index_for_cycle_following_a_diagnostic_cycle.append(k-1)
+            i = actual_cycle_index
+        i += 1
+#     print(i, actual_cycle_index)
+    return renumbered_index_for_cycle_following_a_diagnostic_cycle
+
+
+def index_convoluter(cell, cycle_window_size=20, overlap_cycle_window=False,
+                     overlap_size=5, skip_diagnistic_in_window=False):
+    '''This function generates a nested list of indices by convolting the cycles based on cycle_window_size. 
+        You can choose to have your window of cycles overlap, or skipp the windows that involve diagnostic cycles in between.
+    '''
+    max_cycle_index = len(cell) #30 #
+    if cycle_window_size < overlap_size:
+        raise ValueError(f'If overlapping, overlap_size ({overlap_size}) should be samller than cycle_window_size ({cycle_window_size}). Please check inputs.')
+    if not cycle_window_size < max_cycle_index:
+        raise ValueError(f'cycle_window_size ({cycle_window_size}) should be samller than maximum number of cycles in cell ({max_cycle_index}). Please check inputs.')
+    if overlap_cycle_window:
+        non_overlap =  cycle_window_size - overlap_size
+    else:
+        non_overlap = cycle_window_size
+    intervals = range(0, max_cycle_index, non_overlap)
+    if not skip_diagnistic_in_window:
+        index_covolutions = [list(range(x, x + cycle_window_size)) for x in intervals if x <= max_cycle_index-cycle_window_size]
+    else:
+#         skipped_indices = [5, 6, 7, 20]
+        skipped_indices = find_renumbedred_index(cell)
+        index_covolutions = [list(range(x, x + cycle_window_size)) for x in intervals if x <= max_cycle_index-cycle_window_size
+                             and not (set(list(range(x, x + cycle_window_size))[:-1]) & set(skipped_indices))]
+    return index_covolutions
