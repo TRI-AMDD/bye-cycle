@@ -13,10 +13,11 @@ bye-cycle
         :target: https://bye-cycle.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
 
+![](docs/source/img/logo.png)
 
 
 
-Deep learning tool for infering battery's state of health based on cycle data.
+An automated deep learning tool for early prediction battery life cycle.
 
 
 * Free software: MIT license
