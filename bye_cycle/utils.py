@@ -66,7 +66,7 @@ def find_renumbedred_index(cell):
 
 
 def index_convoluter(cell, cycle_window_size=20, overlap_cycle_window=False,
-                     overlap_size=5, skip_diagnistic_in_window=False):
+                     overlap_size=5, skip_diagnostic_in_window=False):
     '''This function generates a nested list of indices by convolting the cycles based on cycle_window_size. 
         You can choose to have your window of cycles overlap, or skipp the windows that involve diagnostic cycles in between.
     '''
@@ -80,7 +80,7 @@ def index_convoluter(cell, cycle_window_size=20, overlap_cycle_window=False,
     else:
         non_overlap = cycle_window_size
     intervals = range(0, max_cycle_index, non_overlap)
-    if not skip_diagnistic_in_window:
+    if not skip_diagnostic_in_window:
         index_covolutions = [list(range(x, x + cycle_window_size)) for x in intervals if x <= max_cycle_index-cycle_window_size]
     else:
 #         skipped_indices = [5, 6, 7, 20]
