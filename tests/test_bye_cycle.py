@@ -1,33 +1,24 @@
-#!/usr/bin/env python
-
-"""Tests for `bye_cycle` package."""
-
-
 import unittest
-from click.testing import CliRunner
+import bye_cycle
+import numpy as np
 
-from bye_cycle import bye_cycle
-from bye_cycle import cli
+class TestFunctionality(unittest.TestCase):
+    """Tests code functionality for `bye_cycle`."""
+    def test_imports(self):
+        try:
+            import bye_cycle, tensorflow, beep, pandas, sklearn
+        except ImportError as error:
+            raise error
 
+class TestUtils(unittest.TestCase):
+    """Tests for `bye_cycle.utils` methods."""
+    def test_clean_cycle_data(self):
+        from beep.structure.cli import auto_load_processed
+        test_cell = auto_load_processed('test_files/test_cell_LFP.json')
+        columns=['voltage', 'current', 'cycle_index', 'discharge_capacity']
+        cycle_index = 10
+        clean_structured_data_tested_cell = bye_cycle.clean_cycle_data(test_cell,  cycle_index,
+                                                             columns=['voltage', 'current', 'cycle_index', 'discharge_capacity'])
+        assert list(clean_structured_data_tested_cell.columns) == columns
+        assert np.unique(clean_structured_data_tested_cell['cycle_index']) == cycle_index
 
-class TestBye_cycle(unittest.TestCase):
-    """Tests for `bye_cycle` package."""
-
-    def setUp(self):
-        """Set up test fixtures, if any."""
-
-    def tearDown(self):
-        """Tear down test fixtures, if any."""
-
-    def test_000_something(self):
-        """Test something."""
-
-    def test_command_line_interface(self):
-        """Test the CLI."""
-        runner = CliRunner()
-        result = runner.invoke(cli.main)
-        assert result.exit_code == 0
-        assert 'bye_cycle.cli.main' in result.output
-        help_result = runner.invoke(cli.main, ['--help'])
-        assert help_result.exit_code == 0
-        assert '--help  Show this message and exit.' in help_result.output
