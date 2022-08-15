@@ -16,7 +16,7 @@ class TestUtils(unittest.TestCase):
         from beep.structure.cli import auto_load_processed
         test_cell = auto_load_processed('test_files/test_cell_LFP.json')
         columns=['voltage', 'current', 'cycle_index', 'discharge_capacity']
-        cycle_index = 10
+        cycle_index = 5
         clean_structured_data_tested_cell = bye_cycle.clean_cycle_data(test_cell,  cycle_index,
                                                              columns=['voltage', 'current', 'cycle_index', 'discharge_capacity'])
         assert list(clean_structured_data_tested_cell.columns) == columns
