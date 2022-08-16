@@ -1,3 +1,5 @@
+![tests](https://github.com/mehradans/bye-cycle/actions/workflows/test.yml/badge.svg)
+
 <p align="center">
     <img width="300" src="https://user-images.githubusercontent.com/106785874/184673860-5d978d8d-4cb8-4aaf-bacb-79ffd15143a9.png" alt="Bye-Cycle">
 </p>
