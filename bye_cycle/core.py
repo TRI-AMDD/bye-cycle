@@ -1,1 +1,1 @@
-"""Main module."""
+"""Main deep learning module."""

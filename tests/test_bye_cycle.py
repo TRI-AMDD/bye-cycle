@@ -14,7 +14,7 @@ class TestUtils(unittest.TestCase):
     """Tests for `bye_cycle.utils` methods."""
     def test_clean_cycle_data(self):
         from beep.structure.cli import auto_load_processed
-        test_cell = auto_load_processed('./test_files/test_cell_LFP.json')
+        test_cell = auto_load_processed('test_files/test_cell_LFP.json')
         columns=['voltage', 'current', 'cycle_index', 'discharge_capacity']
         cycle_index = 5
         clean_structured_data_tested_cell = bye_cycle.clean_cycle_data(test_cell,  cycle_index,
