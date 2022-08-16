@@ -1,4 +1,4 @@
-![tests](https://github.com/mehradans/bye-cycle/actions/workflows/test.yml/badge.svg)
+![tests](https://github.com/TRI-AMDD/bye-cycle/actions/workflows/test.yml/badge.svg)
 
 <p align="center">
     <img width="300" src="https://user-images.githubusercontent.com/106785874/184673860-5d978d8d-4cb8-4aaf-bacb-79ffd15143a9.png" alt="Bye-Cycle">
@@ -28,11 +28,11 @@ Installation
 --------
 
 ```
-pip install bye-cycle@git+https://github.com/mehradans/bye-cycle.git
+pip install bye-cycle@git+https://github.com/TRI-AMDD/bye-cycle.git
 ```
 or you can clone the source code and install in developer mode:
 ```
-git clone https://github.com/mehradans/bye-cycle.git && cd bye-cycle
+git clone https://github.com/TRI-AMDD/bye-cycle.git && cd bye-cycle
 pip install -e .
 ```
 
