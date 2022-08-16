@@ -1,4 +1,8 @@
 ![tests](https://github.com/TRI-AMDD/bye-cycle/actions/workflows/test.yml/badge.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+<!---[![GitHub Repo Size](https://img.shields.io/github/repo-size/TRI-AMDD/bye-cycle?label=Repo+Size)](https://github.com/TRI-AMDD/bye-cycle/graphs/contributors)-->
+
+Note the triple dash. The advantage is that it works with pandoc when generating TeX or HTML output. More information
 
 <p align="center">
     <img width="300" src="https://user-images.githubusercontent.com/106785874/184673860-5d978d8d-4cb8-4aaf-bacb-79ffd15143a9.png" alt="Bye-Cycle">
