@@ -43,7 +43,7 @@ setup(
     packages=find_packages(include=['bye_cycle', 'bye_cycle.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/mehradans/bye_cycle',
+    url='https://github.com/TRI-AMDD/bye_cycle',
     version='0.1.0',
     zip_safe=False,
 )
