@@ -32,4 +32,4 @@ jobs:
       working-directory: tests/
       run: |
         ls -la
-        pytest tests
+        pytest
