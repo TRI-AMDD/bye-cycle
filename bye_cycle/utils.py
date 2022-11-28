@@ -17,20 +17,23 @@ def interpol_cycle(cell_cycle_data, columns=['voltage', 'current', 'cycle_index'
     return np.array(interpol_cell_cycle_data).T
 
 
-def clean_cycle_data(cell_data, cycle_number, columns=['voltage', 'current', 'cycle_index', 'discharge_capacity']):
-    selected_cell_data = cell_data.structured_data[columns].dropna()
+def clean_cycle_data(cell_data, cycle_number, columns=['voltage', 'current', 'cycle_index', 'discharge_capacity'], exclude_step_type=None):
+    selected_cell_data = cell_data.structured_data[columns]
+    if exclude_step_type is not None:
+        selected_cell_data = selected_cell_data[selected_cell_data['step_type'] != exclude_step_type]
+    selected_cell_data = selected_cell_data.dropna()
     # Getting rid of 0 dishcarge data
     clean_cell_data_cycle_number = selected_cell_data.loc[(selected_cell_data['cycle_index'] == cycle_number) 
                                               & (selected_cell_data['discharge_capacity']!=0)]
     return clean_cell_data_cycle_number[columns]
 
 
-def prep_features_per_cell(cell, n_points=100, columns=['voltage', 'current', 'cycle_index'], interpol_kind='linear'):
+def prep_features_per_cell(cell, n_points=100, columns=['voltage', 'current', 'cycle_index'], interpol_kind='linear', exclude_step_type=None):
     max_cycle_idx = max(cell.structured_data['cycle_index'])
     interp_clean_cell = []
     empty_cycles = []
     for i in tqdm(range(max_cycle_idx)):
-        clean_dat = clean_cycle_data(cell, i, columns=columns)
+        clean_dat = clean_cycle_data(cell, i, columns=columns,  exclude_step_type=exclude_step_type)
         # Looks like there are some missing cycle measurements so ...
         if clean_dat.shape[0] not in [0, 1, 2]:
             interp_clean_cell.append(interpol_cycle(clean_dat, n_points=n_points, columns=columns, interpol_kind=interpol_kind))
@@ -66,7 +69,7 @@ def find_renumbedred_index(cell):
 
 
 def index_convoluter(cell, cycle_window_size=20, overlap_cycle_window=False,
-                     overlap_size=5, skip_diagnistic_in_window=False):
+                     overlap_size=5, skip_diagnostic_in_window=False):
     '''This function generates a nested list of indices by convolting the cycles based on cycle_window_size. 
         You can choose to have your window of cycles overlap, or skipp the windows that involve diagnostic cycles in between.
     '''
@@ -80,7 +83,7 @@ def index_convoluter(cell, cycle_window_size=20, overlap_cycle_window=False,
     else:
         non_overlap = cycle_window_size
     intervals = range(0, max_cycle_index, non_overlap)
-    if not skip_diagnistic_in_window:
+    if not skip_diagnostic_in_window:
         index_covolutions = [list(range(x, x + cycle_window_size)) for x in intervals if x <= max_cycle_index-cycle_window_size]
     else:
 #         skipped_indices = [5, 6, 7, 20]
