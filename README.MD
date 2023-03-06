@@ -1,14 +1,15 @@
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TRI-AMDD/bye-cycle)
 ![tests](https://github.com/TRI-AMDD/bye-cycle/actions/workflows/test.yml/badge.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-<!---[![GitHub Repo Size](https://img.shields.io/github/repo-size/TRI-AMDD/bye-cycle?label=Repo+Size)](https://github.com/TRI-AMDD/bye-cycle/graphs/contributors)-->
+# Bye-Cycle
+<p align="center">
+    <img width="650" src="https://user-images.githubusercontent.com/51170839/222996858-332337d7-493c-4600-a777-335111d94729.gif" alt="Bye-Cycle">
+</p>
 
-<p align="center">
-    <img width="300" src="https://user-images.githubusercontent.com/106785874/184673860-5d978d8d-4cb8-4aaf-bacb-79ffd15143a9.png" alt="Bye-Cycle">
-</p>
-<p align="center">
-    <img width="460" src="https://user-images.githubusercontent.com/106785874/184672636-619480c6-3da1-464a-9617-0ac4dd29d22e.gif" alt="Logo">
-</p>
+
+
 
 <p align="center"> An automated deep learning plugin for early battery life-cycle and degradation inference. </p>
 
