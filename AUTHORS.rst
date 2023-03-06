@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Mehrad Ansari <mehrad.ansari@tri.global>
+* Mehrad Ansari <mehrad.ansari@rochester.edu>
 
 Contributors
 ------------
