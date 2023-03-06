@@ -16,7 +16,7 @@ test_requirements = ['tensorflow', 'beep', 'pandas', 'scipy' ]
 
 setup(
     author="Mehrad Ansari",
-    author_email='mehrad.ansari@tri.global',
+    author_email='mehrad.ansari@rochester.edu',
     python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
