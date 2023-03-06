@@ -29,7 +29,7 @@ jobs:
       run: |
         pip install .
     - name: Run Test
-      working-directory: tests/
+      working-directory: test/
       run: |
         ls -la
         pytest --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html

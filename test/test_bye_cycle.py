@@ -2,9 +2,6 @@ import unittest
 import bye_cycle
 import numpy as np
 import sys
-import os
-sys.path.append('/tests')
-print(os.getcwd())
 
 class TestFunctionality(unittest.TestCase):
     """Tests code functionality for `bye_cycle`."""
@@ -18,8 +15,6 @@ class TestUtils(unittest.TestCase):
     """Tests for `bye_cycle.utils` methods."""
     def test_clean_cycle_data(self):
         from beep.structure.cli import auto_load_processed
-        import os
-        print('HI\n')
         test_cell = auto_load_processed("./test_files/test_cell_LFP.json")
         columns=['voltage', 'current', 'cycle_index', 'discharge_capacity']
         cycle_index = 5
