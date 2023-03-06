@@ -3,6 +3,10 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+import sys
+import os
+sys.path.insert(0, os.path.abspath('..'))
+print(os.getcwd())
 
 with open('README.MD') as readme_file:
     readme = readme_file.read()
