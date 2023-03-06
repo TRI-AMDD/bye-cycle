@@ -1,9 +1,11 @@
+# Bye-Cycle
+
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TRI-AMDD/bye-cycle)
 ![tests](https://github.com/TRI-AMDD/bye-cycle/actions/workflows/test.yml/badge.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-# Bye-Cycle
+
 <p align="center">
     <img width="650" src="https://user-images.githubusercontent.com/51170839/222996858-332337d7-493c-4600-a777-335111d94729.gif" alt="Bye-Cycle">
 </p>
