@@ -14,9 +14,9 @@ with open('README.MD') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['tensorflow', 'beep', 'pandas', 'scipy']
+requirements = ['tensorflow', 'beep', 'pandas', 'scipy', 'seaborn']
 
-test_requirements = ['tensorflow', 'beep', 'pandas', 'scipy' ]
+test_requirements = ['tensorflow', 'beep', 'pandas', 'scipy', 'seaborn']
 
 setup(
     author="Mehrad Ansari",
