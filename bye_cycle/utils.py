@@ -88,3 +88,27 @@ def index_convoluter(cell, cycle_window_size=20, overlap_cycle_window=False,
         index_covolutions = [list(range(x, x + cycle_window_size)) for x in intervals if x <= max_cycle_index-cycle_window_size
                              and not (set(list(range(x, x + cycle_window_size))[:-1]) & set(skipped_indices))]
     return index_covolutions
+
+def make_feature_arrays(data):
+    X_dt_values = []
+    X_time_series = []
+    for X in data:
+        X_dt_values.append(X[1])
+        X_time_series.append(X[0])
+    return np.array(X_time_series), np.array(X_dt_values)
+
+def make_label_arrays(data):
+    slopes = []
+    discharge_cap = []
+    for Y in data:
+        discharge_cap.append(Y[1])
+        slopes.append(Y[0])
+    return np.array(discharge_cap), np.array(slopes)
+
+def scale(inputs, scaler=None):
+    from sklearn import preprocessing
+    inputs_shape = inputs.shape
+    if scaler is None:
+        scaler = preprocessing.StandardScaler().fit(inputs.reshape(-1, inputs_shape[-1]))
+    scaled_input = scaler.transform(inputs.reshape(-1, inputs_shape[-1])).reshape(inputs_shape)
+    return scaler, scaled_input
