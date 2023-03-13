@@ -30,8 +30,8 @@ class DegredationModel(tf.keras.layers.Layer):
     def _build_keras_model(self):
         inputs = tf.keras.Input(shape=(self.input_window_size, self.interpolated_time_length,2))
 
-        x = tf.keras.layers.TimeDistributed(tf.keras.layers.Conv1D(self.hidden_dim, 100),
-                                            input_shape=(self.input_window_size, 100, 2))(inputs)
+        x = tf.keras.layers.TimeDistributed(tf.keras.layers.Conv1D(self.hidden_dim, self.interpolated_time_length),
+                                            input_shape=(self.input_window_size, self.interpolated_time_length, 2))(inputs)
 
         x = tf.keras.layers.TimeDistributed(tf.keras.layers.Dropout(self.drop_rate))(x)
         x = tf.keras.layers.TimeDistributed(tf.keras.layers.GlobalAveragePooling1D())(x)
