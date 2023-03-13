@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Bye-Cycle  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Capacity profile reconstruction" href="capacity_profile_reconstruction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="toc.html" class="icon icon-home">
+            Bye-Cycle
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Bye-Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capacity_profile_reconstruction.html">Capacity profile reconstruction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-bye_cycle.core">Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.core.DegredationModel"><code class="docutils literal notranslate"><span class="pre">DegredationModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModel.compile"><code class="docutils literal notranslate"><span class="pre">DegredationModel.compile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModel.evaluate"><code class="docutils literal notranslate"><span class="pre">DegredationModel.evaluate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModel.fit"><code class="docutils literal notranslate"><span class="pre">DegredationModel.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModel.history"><code class="docutils literal notranslate"><span class="pre">DegredationModel.history()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModel.predict"><code class="docutils literal notranslate"><span class="pre">DegredationModel.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModel.summary"><code class="docutils literal notranslate"><span class="pre">DegredationModel.summary()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.activation"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.activation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.batch_size"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.batch_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.drop_rate"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.drop_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.early_stopping_patience"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.early_stopping_patience</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.hidden_dim"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.hidden_dim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.input_window_size"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.input_window_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.interpolated_time_length"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.interpolated_time_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.lr"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.lr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bye_cycle.core.DegredationModelHyperParams.reg_strength"><code class="docutils literal notranslate"><span class="pre">DegredationModelHyperParams.reg_strength</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bye_cycle.utils">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.clean_cycle_data"><code class="docutils literal notranslate"><span class="pre">clean_cycle_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.eval_dc_reconstruction"><code class="docutils literal notranslate"><span class="pre">eval_dc_reconstruction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.find_renumbedred_index"><code class="docutils literal notranslate"><span class="pre">find_renumbedred_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.find_slope"><code class="docutils literal notranslate"><span class="pre">find_slope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.index_convoluter"><code class="docutils literal notranslate"><span class="pre">index_convoluter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.interpol_cycle"><code class="docutils literal notranslate"><span class="pre">interpol_cycle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.linear_fit"><code class="docutils literal notranslate"><span class="pre">linear_fit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.make_feature_arrays"><code class="docutils literal notranslate"><span class="pre">make_feature_arrays()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.make_label_arrays"><code class="docutils literal notranslate"><span class="pre">make_label_arrays()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.prep_features_per_cell"><code class="docutils literal notranslate"><span class="pre">prep_features_per_cell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.process_data"><code class="docutils literal notranslate"><span class="pre">process_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bye_cycle.utils.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="toc.html">Bye-Cycle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+<div class="git-ribbon">
+  <a href="http://github.com/SwissDataScienceCenter" rel="me">Join us on GitHub</a>
+</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="toc.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com///blob/API.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="module-bye_cycle.core">
+<span id="core"></span><h2>Core<a class="headerlink" href="#module-bye_cycle.core" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bye_cycle.core.</span></span><span class="sig-name descname"><span class="pre">DegredationModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hyperparams</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel.compile">
+<span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel.compile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel.evaluate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel.fit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel.history">
+<span class="sig-name descname"><span class="pre">history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel.history" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel.predict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModel.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModel.summary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bye_cycle.core.</span></span><span class="sig-name descname"><span class="pre">DegredationModelHyperParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tanh'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_window_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_strength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolated_time_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">early_stopping_patience</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.activation">
+<span class="sig-name descname"><span class="pre">activation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tanh'</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.activation" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.batch_size">
+<span class="sig-name descname"><span class="pre">batch_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.batch_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.drop_rate">
+<span class="sig-name descname"><span class="pre">drop_rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.1</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.drop_rate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.early_stopping_patience">
+<span class="sig-name descname"><span class="pre">early_stopping_patience</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.early_stopping_patience" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.hidden_dim">
+<span class="sig-name descname"><span class="pre">hidden_dim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.hidden_dim" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.input_window_size">
+<span class="sig-name descname"><span class="pre">input_window_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.input_window_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.interpolated_time_length">
+<span class="sig-name descname"><span class="pre">interpolated_time_length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.interpolated_time_length" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.lr">
+<span class="sig-name descname"><span class="pre">lr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.001</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.lr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bye_cycle.core.DegredationModelHyperParams.reg_strength">
+<span class="sig-name descname"><span class="pre">reg_strength</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.1</span></em><a class="headerlink" href="#bye_cycle.core.DegredationModelHyperParams.reg_strength" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-bye_cycle.utils">
+<span id="utilities"></span><h2>Utilities<a class="headerlink" href="#module-bye_cycle.utils" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.clean_cycle_data">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">clean_cycle_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['voltage',</span> <span class="pre">'current',</span> <span class="pre">'cycle_index',</span> <span class="pre">'discharge_capacity']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.clean_cycle_data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.eval_dc_reconstruction">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">eval_dc_reconstruction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicted_dc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_dc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.eval_dc_reconstruction" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.find_renumbedred_index">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">find_renumbedred_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.find_renumbedred_index" title="Permalink to this definition"></a></dt>
+<dd><p>This function finds the renumbered index for the cycles that are followed by a diagnostic cycle</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.find_slope">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">find_slope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle_window_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.find_slope" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.index_convoluter">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">index_convoluter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_window_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap_cycle_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_diagnistic_in_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.index_convoluter" title="Permalink to this definition"></a></dt>
+<dd><p>This function generates a nested list of indices by convolting the cycles based on cycle_window_size. 
+You can choose to have your window of cycles overlap, or skipp the windows that involve diagnostic cycles in between.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.interpol_cycle">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">interpol_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_cycle_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['voltage',</span> <span class="pre">'current',</span> <span class="pre">'cycle_index']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpol_kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.interpol_cycle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.linear_fit">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">linear_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_x_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_xy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.linear_fit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.make_feature_arrays">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">make_feature_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.make_feature_arrays" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.make_label_arrays">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">make_label_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.make_label_arrays" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.prep_features_per_cell">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">prep_features_per_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['voltage',</span> <span class="pre">'current',</span> <span class="pre">'cycle_index']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpol_kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.prep_features_per_cell" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.process_data">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">process_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.process_data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bye_cycle.utils.scale">
+<span class="sig-prename descclassname"><span class="pre">bye_cycle.utils.</span></span><span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bye_cycle.utils.scale" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="capacity_profile_reconstruction.html" class="btn btn-neutral float-left" title="Capacity profile reconstruction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toyota Research Institute.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
