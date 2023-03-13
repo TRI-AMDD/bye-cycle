@@ -13,13 +13,13 @@
 
 
 
-<p align="center"> An automated deep learning plugin for early battery life-cycle and degradation inference. </p>
+<p align="center"> An automated deep learning plugin for early battery degradation inference. </p>
 
 
 Overview
 --------
 <p align="center">
-    <img width="650" src="docs\source\TOC.png" alt="Overview">
+    <img width="650" src="https://user-images.githubusercontent.com/51170839/224599359-24fea431-7cc0-417a-afe0-bf268795baf2.png" alt="Overview">
 </p>
 
 <p>
@@ -41,42 +41,38 @@ Features
     <img width="850" src="https://user-images.githubusercontent.com/106785874/184691653-c812bc67-be79-464e-a096-90c5f8cbd119.gif" alt="discharge_curve.gif">
 </p>
 
+
 Installation
 --------
 
-```
+```python
 pip install bye-cycle@git+https://github.com/TRI-AMDD/bye-cycle.git
 ```
+
 or you can clone the source code and install in developer mode:
-```
+
+```python
 git clone https://github.com/TRI-AMDD/bye-cycle.git && cd bye-cycle
 pip install -e .
 ```
+
 
 Citation
 --------
 
 [See paper](https://chemrxiv.org/engage/chemrxiv/public-dashboard) and the citation:
 
-<!-- ```bibtex
-@article{ansari2022inferring,
-  title={Inferring spatial source of disease outbreaks using maximum entropy},
-  author={Ansari, Mehrad and Soriano-Pa{\~n}os, David and Ghoshal, Gourab and White, Andrew D},
-  journal={Physical Review E},
-  volume={106},
-  number={1},
-  pages={014306},
-  year={2022},
-  publisher={APS}
-} -->
-```
 
 
 License
 --------
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+
 
 Authors
 --------
 
 `bye-cycle` is developed by [Mehrad Ansari](https://mehradans92.github.io/).
+
