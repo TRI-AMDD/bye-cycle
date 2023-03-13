@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath('../../examples'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Bye-Cycle'
-copyright = '2023, Toyota Research Institute'
+copyright = '2023, Toyota Research Institute. Developed by Mehrad Ansari'
 author = 'Mehrad Ansari'
 
 # -- General configuration ---------------------------------------------------
@@ -70,6 +70,7 @@ html_static_path = ['_static']
 
 html_context = {
     "display_github": True,  # Add 'Edit on Github' link instead of 'View page source'
+    'author': 'Mehrad Ansari',
     "last_updated": False,
     "commit": False,
 }

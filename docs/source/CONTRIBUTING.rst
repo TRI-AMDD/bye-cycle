@@ -112,7 +112,7 @@ Tips
 To run a subset of tests::
 
 
-    $ python -m unittest tests.test_bye_cycle
+    $ python -m unittest test.test_bye_cycle
 
 Deploying
 ---------
