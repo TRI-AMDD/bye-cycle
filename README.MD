@@ -1,4 +1,4 @@
-# Bye-Cycle
+# 🔋 Bye-Cycle 🔋
 
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TRI-AMDD/bye-cycle)
 ![tests](https://github.com/TRI-AMDD/bye-cycle/actions/workflows/test.yml/badge.svg)
@@ -23,7 +23,7 @@ Overview
 </p>
 
 <p>
-    Our recurrent neural network model inputs time-series data for current and voltage coming from a single, movable window of recent cycles, predicting near-term ($m_1$) and long-term ($m_2$) as slopes of the capacity fade curve in the consecutive prediction window. Approximately equal values of slopes (with small magnitudes) accounts for a healthy battery at early cycles, whereas diverging slopes show a likely failing battery at the vicinity of the knee onset. The resource-expensive training is done on cloud computers, however, the cheap-to-evaluate inference model can effectively run on low commodity CPU/GPUs, allowing for an on-board vehicle inference opportunity for cells in operation. Additionally, this approach can be insightful for qualifying used LIBs with unknown cycling histories for second life applications.
+    Our recurrent neural network model inputs time-series data for current and voltage coming from a single, movable window of recent cycles, predicting near-term ($m_1$) and long-term ($m_2$) as slopes of the capacity fade curve in the consecutive prediction window. Approximately equal values of slopes (with small magnitudes) accounts for a healthy battery at early cycles, whereas diverging slopes show a likely failing battery at the vicinity of the knee onset. The resource-expensive training is done on cloud computers, however, the cheap-to-evaluate inference model can effectively run on low commodity CPU/GPUs, allowing for an on-board vehicle inference opportunity for cells in operation. Additionally, this approach can be insightful for qualifying used lithium-ion batteries with <strong>unknown cycling histories</strong> for second life applications.
 </p>
 
 
