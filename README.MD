@@ -16,10 +16,21 @@
 <p align="center"> An automated deep learning plugin for early battery life-cycle and degradation inference. </p>
 
 
+Overview
+--------
+<p align="center">
+    <img width="650" src="docs\source\TOC.png" alt="Overview">
+</p>
+
+<p>
+    Our recurrent neural network model inputs time-series data for current and voltage coming from a single, movable window of recent cycles, predicting near-term ($m_1$) and long-term ($m_2$) as slopes of the capacity fade curve in the consecutive prediction window. Approximately equal values of slopes (with small magnitudes) accounts for a healthy battery at early cycles, whereas diverging slopes show a likely failing battery at the vicinity of the knee onset. The resource-expensive training is done on cloud computers, however, the cheap-to-evaluate inference model can effectively run on low commodity CPU/GPUs, allowing for an on-board vehicle inference opportunity for cells in operation. Additionally, this approach can be insightful for qualifying used LIBs with unknown cycling histories for second life applications.
+</p>
+
+
 Features
 --------
 
-`bye-cycle` uses a rolling window of cycles containing cycle-independant features (current and voltage time-series data) to make inference on the magnitude of the drop in cell's capacity. User gets to choose variations of input and output window sizes as a hyperparameter in reconstructing the discharge capacity trajectory.
+`bye-cycle` uses a rolling window of cycles containing cycle-independant features (current and voltage time-series data) to make inference on the magnitude of the drop in cell's capacity. User gets to choose variations of input and output window sizes as a hyperparameter in reconstructing the discharge capacity profile.
 
 <p align="center">
     <em><strong>Input window size:</strong> 50 &nbsp;  <strong>Output window size:</strong> 50</em>
@@ -41,6 +52,25 @@ or you can clone the source code and install in developer mode:
 git clone https://github.com/TRI-AMDD/bye-cycle.git && cd bye-cycle
 pip install -e .
 ```
+
+Citation
+--------
+
+[See paper](https://chemrxiv.org/engage/chemrxiv/public-dashboard) and the citation:
+
+<!-- ```bibtex
+@article{ansari2022inferring,
+  title={Inferring spatial source of disease outbreaks using maximum entropy},
+  author={Ansari, Mehrad and Soriano-Pa{\~n}os, David and Ghoshal, Gourab and White, Andrew D},
+  journal={Physical Review E},
+  volume={106},
+  number={1},
+  pages={014306},
+  year={2022},
+  publisher={APS}
+} -->
+```
+
 
 License
 --------
