@@ -4,3 +4,4 @@ sphinx-rtd-theme
 sphinx_autodoc_typehints
 nbsphinx
 renku-sphinx-theme
+sphinx-nbexamples

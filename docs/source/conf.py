@@ -8,7 +8,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, os.path.abspath('../../bye-cycle'))
+# sys.path.insert(0, os.path.abspath('../../bye-cycle'))
 sys.path.insert(0, os.path.abspath('../../examples'))
 
 
@@ -42,6 +42,9 @@ autosectionlabel_prefix_document = False
 # Remove last updated date from the footer
 html_show_sphinx = False
 
+# Chnage notebook folder    
+nbsphinx_notebooks_dir = '../../examples'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -57,6 +60,7 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'renku'
+source_suffix = [".rst", ".md"]
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
