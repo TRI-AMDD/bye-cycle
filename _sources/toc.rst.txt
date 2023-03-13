@@ -7,4 +7,7 @@ Bye-Cycle
     index.rst
     quick_start.rst
     capacity_profile_reconstruction.rst
+    AUTHORS.rst
+    CONTRIBUTING.rst
     API.rst
+   
