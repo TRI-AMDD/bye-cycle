@@ -60,8 +60,15 @@ pip install -e .
 Citation
 --------
 
-[See paper](https://chemrxiv.org/engage/chemrxiv/public-dashboard) and the citation:
+[See paper](https://chemrxiv.org/engage/chemrxiv/article-details/640a28a76642bf8c8f413f32) and the citation:
 
+```bibtex
+@article{ansari2023history,
+  title={History-Agnostic Battery Degradation Inference},
+  author={Ansari, Mehrad and Torrisi, Steven B and Trewartha, Amalie and Sun, Shijing},
+  year={2023}
+}
+```
 
 
 License
