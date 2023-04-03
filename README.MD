@@ -60,7 +60,7 @@ pip install -e .
 Citation
 --------
 
-[See paper](https://chemrxiv.org/engage/chemrxiv/article-details/640a28a76642bf8c8f413f32) and the citation:
+See [preprint](https://chemrxiv.org/engage/chemrxiv/article-details/640a28a76642bf8c8f413f32) and the citation:
 
 ```bibtex
 @article{ansari2023history,
