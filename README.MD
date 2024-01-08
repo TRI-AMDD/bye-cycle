@@ -74,8 +74,7 @@ See [preprint](https://chemrxiv.org/engage/chemrxiv/article-details/640a28a76642
 License
 --------
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
+[![License: CC BY-NC-ND 4.0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-nd.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
 Authors
