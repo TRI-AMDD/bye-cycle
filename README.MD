@@ -60,13 +60,21 @@ pip install -e .
 Citation
 --------
 
-See [preprint](https://chemrxiv.org/engage/chemrxiv/article-details/640a28a76642bf8c8f413f32) and the citation:
+See [paper](https://www.sciencedirect.com/science/article/pii/S2352152X23036782) and the citation:
 
 ```bibtex
-@article{ansari2023history,
-  title={History-Agnostic Battery Degradation Inference},
-  author={Ansari, Mehrad and Torrisi, Steven B and Trewartha, Amalie and Sun, Shijing},
-  year={2023}
+@article{ANSARI2024110279,
+title = {History-agnostic battery degradation inference},
+journal = {Journal of Energy Storage},
+volume = {81},
+pages = {110279},
+year = {2024},
+issn = {2352-152X},
+doi = {https://doi.org/10.1016/j.est.2023.110279},
+url = {https://www.sciencedirect.com/science/article/pii/S2352152X23036782},
+author = {Mehrad Ansari and Steven B. Torrisi and Amalie Trewartha and Shijing Sun},
+keywords = {Battery degradation, Used battery, Unknown cycling history, Deep learning, Second life applications},
+abstract = {Lithium-ion batteries (LIBs) have attracted widespread attention as an efficient energy storage device on electric vehicles (EV) to achieve emission-free mobility. However, the performance of LIBs deteriorates with time and usage, and the state of health of used batteries are difficult to quantify. Having accurate estimations of a battery’s remaining life across different life stages would benefit maintenance, safety, and serve as a means of qualifying used batteries for second-life applications. Since the full history of a battery may not always be available in downstream applications, in this study, we demonstrate a deep learning framework that enables dynamic degradation rate prediction, including both short-term and long-term forecasting, while requiring only the most recent battery usage information. Specifically, our model takes a rolling window of current and voltage time-series inputs, and predicts the near-term and long-term capacity fade via a recurrent neural network. We exhaustively benchmark our model against a naive extrapolating model by evaluating the error on reconstructing the discharge capacity profile under different settings. We show that our model’s performance in accurately inferring the battery’s degradation profile is agnostic with respect to cell cycling history and its current state of health. This approach can provide a promising path towards evaluating battery health in running vehicles, enhance edge-computing battery diagnostics, and determine the state of health for used batteries with unknown cycling histories.}
 }
 ```
 
